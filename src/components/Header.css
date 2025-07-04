@@ -1,0 +1,226 @@
+/* Header Component Styles */
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.header-title {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.title-icon {
+  font-size: 1.8rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.online-users {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.online-count {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.online-avatars {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff6b6b, #feca57);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.user-avatar:hover {
+  transform: scale(1.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.user-avatar.current-user {
+  background: linear-gradient(45deg, #48cae4, #0077b6);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.user-avatar.overflow {
+  background: rgba(255, 255, 255, 0.2);
+  font-size: 0.7rem;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.activity-toggle {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.activity-toggle:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+.activity-toggle.active {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.activity-icon {
+  font-size: 1rem;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.current-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.username {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.logout-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 77, 77, 0.8);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+
+.logout-icon {
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .header-left {
+    gap: 1rem;
+  }
+  
+  .header-title {
+    font-size: 1.3rem;
+  }
+  
+  .online-users {
+    gap: 0.5rem;
+  }
+  
+  .online-count {
+    font-size: 0.8rem;
+  }
+  
+  .user-avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+  }
+  
+  .activity-toggle {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+  
+  .username {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.6rem 0.8rem;
+  }
+  
+  .header-title {
+    font-size: 1.1rem;
+  }
+  
+  .online-avatars {
+    gap: 0.2rem;
+  }
+  
+  .user-avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 0.6rem;
+  }
+  
+  .activity-toggle span:not(.activity-icon) {
+    display: none;
+  }
+}
